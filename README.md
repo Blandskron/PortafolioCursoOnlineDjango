@@ -1,4 +1,4 @@
 # PortafolioCursoOnlineDjango
 Proyecto educativo
 # Colaboradores
-Alvaro
+Alvaro - Aquiles
