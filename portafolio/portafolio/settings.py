@@ -56,7 +56,7 @@ ROOT_URLCONF = 'portafolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portafolio.wsgi.application'
 
+LOGIN_REDIRECT_URL = '/profile/'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -118,6 +119,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    BASE_DIR / 'homeapp/static/',
+]
+
+# Configuración para archivos multimedia (imágenes de perfil)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
