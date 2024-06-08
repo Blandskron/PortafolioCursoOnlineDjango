@@ -16,3 +16,9 @@ body {
 .home-container{
     min-height: 68vh;
 }
+
+.profile-img{
+    width:60%; 
+    border-radius:50%; 
+    box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);
+}

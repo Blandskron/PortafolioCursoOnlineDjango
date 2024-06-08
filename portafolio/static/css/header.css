@@ -34,4 +34,5 @@ nav ul li a:hover {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)); /* Degradado para el fondo */
     border-radius: 5px; /* Redondeado de los bordes */
     padding: 5px 10px; /* Espaciado interno */
+    font-weight: bold;
 }
