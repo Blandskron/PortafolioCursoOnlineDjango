@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <h2>Profile</h2>
+                    </div>
+                    <div>
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div>
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div>
+                                <label for="profile_picture">Upload Profile Picture:</label>
+                                <input type="file" name="profile_picture">
+                            </div>
+                            <button type="submit" >Upload</button>
+                            <a href="{% url 'profileinfo' %}">Profile Information</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
