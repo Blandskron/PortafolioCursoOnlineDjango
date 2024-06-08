@@ -5,8 +5,7 @@ nav {
     height: 70px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+
 }
 
 nav ul {
@@ -20,15 +19,20 @@ nav ul li {
     margin-right: 20px;
 }
 
-nav ul li a {
+.navbar-element {
     color: white;
     text-decoration: none;
     font-size: 16px;
     transition: all 0.3s ease;
+    
 }
 
 nav ul li a:hover {
-    color: pink; /* Cambia este color según tus necesidades */
-    font-size: 18px; /* Ajusta el tamaño según tus necesidades */
+    color: pink; /* Color del texto al pasar el mouse */
+    font-size: 18px; /* Tamaño del texto al pasar el mouse */
     transform: scale(1.1);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)); /* Degradado para el fondo */
+    border-radius: 5px; /* Redondeado de los bordes */
+    padding: 5px 10px; /* Espaciado interno */
+    font-weight: bold;
 }
