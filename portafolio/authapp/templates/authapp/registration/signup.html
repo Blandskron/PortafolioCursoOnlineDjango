@@ -8,8 +8,10 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-header">
                     <h1 class="card-title text-center">Regístrate</h1>
+                </div>
+                <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3">
@@ -28,7 +30,10 @@
                             <label for="password2" class="form-label">Confirma Contraseña:</label>
                             <input type="password" id="password2" name="password2" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary text-center">Registrame</button>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

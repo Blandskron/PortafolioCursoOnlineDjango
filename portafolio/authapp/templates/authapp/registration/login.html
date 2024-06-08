@@ -8,8 +8,10 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-header">
                     <h1 class="card-title text-center">Inicia Sesión</h1>
+                </div>
+                <div class="card-body">
                     <form method="post">
                         {% csrf_token %}
                         <div class="mb-3">
@@ -20,8 +22,14 @@
                             <label for="password" class="form-label">Contraseña</label>
                             <input type="password" id="password" name="password" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
-                        <a href="{% url 'signup' %}" class="btn btn-link">¿No tienes cuenta? Regístrate!</a>
+                        <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                        </div>
+                        
+
+                        <div class="card-footer text-body-secondary text-center">
+                            <a href="{% url 'signup' %}" class="btn btn-link">¿No tienes cuenta? Regístrate!</a>
+                        </div>
                     </form>
                 </div>
             </div>
