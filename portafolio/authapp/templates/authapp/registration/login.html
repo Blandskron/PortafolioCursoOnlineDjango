@@ -4,28 +4,28 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    <div>
-        <div>
-            <div>
-                <div>
-                    <div><h2>Login</h2></div>
-                    <div>
-                        <form method="post">
-                            {% csrf_token %}
-                            <div>
-                                <label for="username">Username:</label>
-                                <input type="text" id="username" name="username">
-                            </div>
-                            <div>
-                                <label for="password">Password:</label>
-                                <input type="password" id="password" name="password">
-                            </div>
-                            <button type="submit">Login</button>
-                            <a href="{% url 'signup' %}">Sign Up</a>
-                        </form>
-                    </div>
+<div class="container mt-5 main-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Inicia Sesión</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de usuario:</label>
+                            <input type="text" id="username" name="username" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" id="password" name="password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                        <a href="{% url 'signup' %}" class="btn btn-link">¿No tienes cuenta? Regístrate!</a>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

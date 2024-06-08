@@ -11,10 +11,11 @@ body {
     border-top: 1px solid #2e3c51;
     box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);
     padding-bottom: 1%;
+    margin-top: 3%;
 }
 
-.home-container{
-    min-height: 68vh;
+.main-container{
+    min-height: 100vh;
 }
 
 .profile-img{
@@ -22,3 +23,17 @@ body {
     border-radius:50%; 
     box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);
 }
+
+.card-title{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.card{
+    margin-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-shadow: -8px -8px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to top left, #FFC0CB, #9370DB);
+}
+
