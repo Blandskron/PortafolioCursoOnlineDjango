@@ -23,4 +23,5 @@ urlpatterns = [
     path('', RedirectView.as_view(url='home/', permanent=True)),
     path('home/', include('homeapp.urls')),
     path('auth/', include('authapp.urls')),
+    path('blog/', include('blogapp.urls')),
 ]
