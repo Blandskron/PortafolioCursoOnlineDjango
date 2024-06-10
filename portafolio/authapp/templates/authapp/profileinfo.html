@@ -4,31 +4,30 @@
 {% block title %}Perfil{% endblock %}
 
 {% block content %}
-    <div>
-        <div>
-            <div>
-                <div>
+<div class="container mt-5 main-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title text-center">Perfil de Usuario</h1>
+                </div>
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <p>¡Hola, {{ user.username }}!</p>
                     <div>
-                        <h2>Perfil de Usuario</h2>
-                    </div>
-                    <div>
-                        {% if user.is_authenticated %}
-                            <p>¡Hola, {{ user.username }}!</p>
-                            <div>
-                                {% if user.userprofile.profile_picture %}
-                                    <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" width="100px">
-                                {% else %}
-                                    <p>No has subido una imagen de perfil todavía.</p>
-                                {% endif %}
-                            </div>
+                        {% if user.userprofile.profile_picture %}
+                        <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" width="100px" style>
                         {% else %}
-                            <p>Inicia sesión para ver tu perfil.</p>
-                            <a href="{% url 'login' %}">Iniciar sesión</a>
+                        <p>No has subido una imagen de perfil todavía.</p>
                         {% endif %}
                     </div>
-                    
+                    {% else %}
+                    <p>Inicia sesión para ver tu perfil.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar sesión</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
