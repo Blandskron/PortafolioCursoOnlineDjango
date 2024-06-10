@@ -4,33 +4,33 @@
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-    <div>
-        <div>
-            <div>
-                <div>
-                    <div>
-                        <h2>Profile</h2>
-                    </div>
-                    <div>
-                        {% for message in messages %}
-                            {% if message.tags == 'success' %}
-                                <div>
-                                    {{ message }}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <div>
-                                <label for="profile_picture">Upload Profile Picture:</label>
-                                <input type="file" name="profile_picture">
+<div class="container mt-5 main-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title text-center">Profile</h1>
+                </div>
+                <div class="card-body">
+                    {% for message in messages %}
+                        {% if message.tags == 'success' %}
+                            <div class="alert alert-success">
+                                {{ message }}
                             </div>
-                            <button type="submit" >Upload</button>
-                            <a href="{% url 'profileinfo' %}">Profile Information</a>
-                        </form>
-                    </div>
+                        {% endif %}
+                    {% endfor %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="profile_picture" class="form-label">Upload Profile Picture:</label>
+                            <input type="file" name="profile_picture" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                        <a href="{% url 'profileinfo' %}" class="btn btn-link">Profile Information</a>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
