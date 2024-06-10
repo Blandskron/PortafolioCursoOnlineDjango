@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
@@ -16,16 +17,18 @@
   </head>
   <body>
 
-    <header>
+    <header class="top">
       {% include "header.html" %}
     </header>
 
-    {% block content %}
-    {% endblock %}
+    <div class="contenido">
+      {% block content %}
+      {% endblock %}
+    </div>
 
     {% include "whatsapp.html" %}
 
-    <footer>
+    <footer class="info">
       {% include "footer.html" %}
     </footer>
 
