@@ -16,7 +16,7 @@
                     <p>¡Hola, {{ user.username }}!</p>
                     <div>
                         {% if user.userprofile.profile_picture %}
-                        <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" width="100px" style>
+                        <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" width="100px" style="border-radius: 50%;">
                         {% else %}
                         <p>No has subido una imagen de perfil todavía.</p>
                         {% endif %}
