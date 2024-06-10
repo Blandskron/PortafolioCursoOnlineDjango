@@ -4,37 +4,40 @@
 {% block title %}Signup{% endblock %}
 
 {% block content %}
-    <div>
-        <div>
-            <div>
-                <div>
-                    <div>
-                        <h2>Signup</h2>
-                    </div>
-                    <div>
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <div>
-                                <label for="username">Username:</label>
-                                <input type="text" id="username" name="username">
-                            </div>
-                            <div>
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email">
-                            </div>
-                            <div>
-                                <label for="password1">Password:</label>
-                                <input type="password" id="password1" name="password1">
-                            </div>
-                            <div>
-                                <label for="password2">Confirm Password:</label>
-                                <input type="password" id="password2" name="password2">
-                            </div>
-                            <button type="submit">Sign Up</button>
-                        </form>
-                    </div>
+<div class="container mt-5 main-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title text-center">Regístrate</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de Usuario:</label>
+                            <input type="text" id="username" name="username" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Contraseña:</label>
+                            <input type="password" id="password1" name="password1" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Confirma Contraseña:</label>
+                            <input type="password" id="password2" name="password2" class="form-control">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary text-center">Registrame</button>
+                        </div>
+                        
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
