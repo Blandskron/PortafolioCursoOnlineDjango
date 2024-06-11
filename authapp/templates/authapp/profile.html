@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"><h2>Profile</h2></div>
+                    <div class="card-body">
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div class="alert alert-success" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group mt-2">
+                                <label for="profile_picture">Upload Profile Picture:</label>
+                                <input type="file" name="profile_picture" class="form-control mt-2">
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary m-2">Upload</button>
+                            <a href="{% url 'profileinfo' %}" class="btn btn-outline-info m-2">Profile Information</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

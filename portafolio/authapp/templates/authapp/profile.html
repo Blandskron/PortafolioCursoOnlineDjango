@@ -9,7 +9,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="card-title text-center">Profile</h1>
+                    <h1 class="card-title text-center">Subir Imágen de perfil</h1>
                 </div>
                 <div class="card-body">
                     {% for message in messages %}
@@ -22,19 +22,19 @@
                     <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <label for="profile_picture" class="form-label">Upload Profile Picture:</label>
+                            <label for="profile_picture" class="form-label">Selecciona foto de perfil:</label>
                             <input type="file" name="profile_picture" class="form-control">
                         </div>
                         <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <button type="submit" class="btn btn-primary">Subir Imágen</button>
                         </div>
                         <div class="mb-3 text-center">
-                            <a href="{% url 'profileinfo' %}" class="btn btn-link">Profile Information</a>
+                            <a href="{% url 'profileinfo' %}" class="btn btn-primary">Ver tu Perfil</a>
                         </div>
                     </form>
                 </div>
                 {% if messages %}
-                    <div class="card-footer">
+                    <div class="card-footer text-center py-5">
                         <ul class="error-list">
                             {% for message in messages %}
                                 {% if message.tags == 'error' %}

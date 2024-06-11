@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from django.contrib import messages
-from .forms import SignUpForm, ProfileForm
+from .forms import SignUpForm
 
 def signup(request):
     if request.method == 'POST':
@@ -30,7 +30,7 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('profileinfo')
+                return redirect('profile')
     else:
         form = AuthenticationForm()
     return render(request, 'authapp/registration/login.html', {'form': form})
@@ -41,23 +41,13 @@ def user_logout(request):
 
 def profile(request):
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES)
-        if form.is_valid():
-            profile_picture = form.cleaned_data.get('profile_picture')
-            if profile_picture:
-                profile = request.user.userprofile
-                profile.profile_picture = profile_picture
-                profile.save()
-                messages.success(request, 'Imágen subida')
-            else:
-                messages.error(request, 'No se ha seleccionado ninguna imagen.')  # Agrega un mensaje de error si no se selecciona ninguna imagen
-        else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.error(request, f"{field.title()}: {error}")  # Agrega los errores del formulario como mensajes de error
-    else:
-        form = ProfileForm()
-    return render(request, 'authapp/profile.html', {'form': form, 'messages': messages.get_messages(request)})
+        profile_picture = request.FILES.get('profile_picture')
+        if profile_picture:
+            profile = request.user.userprofile
+            profile.profile_picture = profile_picture
+            profile.save()
+            messages.success(request, 'Image uploaded successfully')
+    return render(request, 'authapp/profile.html', {'messages': messages.get_messages(request)})
 
 @login_required
 def profileinfo(request):
