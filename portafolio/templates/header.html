@@ -1,36 +1,32 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <ul class="navbar-nav">
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li><a href="{% url 'contact' %}">Contacto</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'expense_create' %}">Crear Gasto</a></li>
+        {% else %}
+
+        {% endif %}
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'expense_list' %}">Lista de Gastos</a></li>
+        {% else %}
+
+        {% endif %}
+    </ul>
+    <ul class="nav justify-content-end">
+        {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link navbar-element" href="{% url 'home' %}">Home</a>
+                <a class="nav-link" href="{% url 'logout' %}" style="color: white;">
+                    <button type="button" class="btn btn-outline-light">Cerrar Sesión</button>
+                </a>
             </li>
+        {% else %}
             <li class="nav-item">
-                <a class="nav-link navbar-element" href="{% url 'blog' %}">Blog</a>
+                <a class="nav-link" href="{% url 'login' %}" style="color: white;">
+                    <button type="button" class="btn btn-outline-light">Iniciar Sesión</button>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link navbar-element" href="{% url 'contact' %}">Contact</a>
-            </li>
-        </ul>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-            <ul class="navbar-nav">
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">
-                            <button type="button" class="btn btn-outline-light">Cerrar sesión</button>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <button type="button" class="btn btn-outline-light">Iniciar Sesión</button>
-                        </a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
-    </div>
+        {% endif %}
+    </ul>
 </nav>
