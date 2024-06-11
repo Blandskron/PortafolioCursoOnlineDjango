@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de blogs{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-5 mb-5">
+        <h2>Lista de blogs</h2>
+        <div class="row text-center">
+            <br>
+            <div class="scroll-container" style="max-height: 350px; overflow-y: auto;">
+                {% for blog in blogs %}
+                    <div class="card text-center mt-3" style="background-color: #161e29; border-top: 1px solid #2e3c51; box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);">
+                        <div class="card-header" style="color: white"><h5 class="card-title" style="color: white">{{ blog.title }}</h5></div>
+                        <div class="card-body">
+                        <p class="card-text" style="color: white">{{ blog.content|slice:":100" }}</p>
+                        <a href="{% url 'blog_detail' blog.id %}" class="btn btn-outline-warning">Leer Completo</a>
+                        </div>
+                        <div class="card-footer text-body-secondary"><p class="card-text" style="color: yellow;">Publicado el: {{ blog.date_posted }}</p></div>
+                    </div>
+                {% endfor %}
+            </div>
+            <br>
+        </div>
+    </div>
+{% endblock %}
