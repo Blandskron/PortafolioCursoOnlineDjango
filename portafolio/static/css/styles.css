@@ -48,3 +48,8 @@ body {
     margin-top: 1%;
 }
 
+.error-text{
+    font-weight: bold;
+    color: red;
+}
+
