@@ -47,3 +47,8 @@ body {
     background: none;
     margin-top: 1%;
 }
+
+.error-text{
+    font-weight: bold;
+    color: red;
+}
