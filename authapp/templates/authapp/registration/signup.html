@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="background-color: #161e29; border-top: 1px solid #2e3c51; box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);">
+                    <div class="card-header"><h2 style="color: white;">Signup</h2></div>
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group mt-2">
+                                <label for="username" style="color: white;">Username:</label>
+                                <input type="text" class="form-control mt-2" id="username" name="username">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="email" style="color: white;">Email:</label>
+                                <input type="email" class="form-control mt-2" id="email" name="email">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="password1" style="color: white;">Password:</label>
+                                <input type="password" class="form-control mt-2" id="password1" name="password1">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="password2" style="color: white;">Confirm Password:</label>
+                                <input type="password" class="form-control mt-2" id="password2" name="password2">
+                            </div>
+                            <button type="submit" class="btn btn-outline-info mt-2">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
