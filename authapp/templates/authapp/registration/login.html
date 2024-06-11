@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="background-color: #161e29; border-top: 1px solid #2e3c51; box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);">
+                    <div class="card-header"><h2 style="color: white;">Login</h2></div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-group mt-2">
+                                <label for="username" style="color: white;">Username:</label>
+                                <input type="text" class="form-control mt-2" id="username" name="username">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="password" style="color: white;">Password:</label>
+                                <input type="password" class="form-control mt-2" id="password" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-outline-success m-2">Login</button>
+                            <a href="{% url 'signup' %}" class="btn btn-outline-warning m-2">Sign Up</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

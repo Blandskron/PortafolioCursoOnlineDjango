@@ -5,3 +5,58 @@ body {
     background: linear-gradient(274deg, rgba(210,105,234,1) 0%, rgba(147,67,183,1) 49%, rgba(127,54,167,1) 65%, rgba(113,46,156,1) 76%, rgba(82,27,131,1) 100%);
     font-family: "Montserrat", sans-serif;
 }
+
+.footer-container{
+    background: linear-gradient(to bottom, #ff1493, #ff69b4);
+    border-top: 1px solid #2e3c51;
+    box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);
+    padding-bottom: 1%;
+    margin-top: 3%;
+}
+
+.main-container{
+    min-height: 100vh;
+}
+
+.profile-img{
+    width:60%; 
+    border-radius:50%; 
+    box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);
+}
+
+.card-title{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.card-header{
+    padding-top: 5%;
+    border: none;
+    background: none;
+}
+.card{
+    margin-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-shadow: -8px -8px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to top left, #FFC0CB, #9370DB);
+}
+
+.card-footer{
+    border: none;
+    background: none;
+    margin-top: 1%;
+}
+
+.error-text{
+    font-weight: bold;
+    color: red;
+}
+
+
+.card-title{
+    font-size: 2.5rem; 
+    color: #007bff; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
