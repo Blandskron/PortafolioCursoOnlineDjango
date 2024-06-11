@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blogapp',
     'authapp',
     'homeapp',
+    'errorapp',
 ]
 
 MIDDLEWARE = [
