@@ -16,6 +16,7 @@ PortafolioCursoOnlineDjango es un proyecto educativo desarrollado como parte de 
 - **Álvaro**
 - **Aquiles**
 - **Bastián**
+- **Sbecerra**
 
 ## Instalación
 

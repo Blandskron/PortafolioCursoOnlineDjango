@@ -13,17 +13,19 @@
                 </div>
                 <div class="card-body">
                     {% if user.is_authenticated %}
-                    <p>¡Hola, {{ user.username }}!</p>
-                    <div>
-                        {% if user.userprofile.profile_picture %}
-                        <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" width="100px" style="border-radius: 50%;">
-                        {% else %}
-                        <p>No has subido una imagen de perfil todavía.</p>
-                        {% endif %}
-                    </div>
+                        <p class="text-center">¡Hola, {{ user.username }}!</p>
+                        <div class="text-center">
+                            {% if user.userprofile.profile_picture %}
+                                <img src="{{ user.userprofile.profile_picture.url }}" alt="Imagen de perfil" class="img-thumbnail" style="width: 200px;">
+                            {% else %}
+                                <p>No has subido una imagen de perfil todavía.</p>
+                            {% endif %}
+                        </div>
                     {% else %}
-                    <p>Inicia sesión para ver tu perfil.</p>
-                    <a href="{% url 'login' %}" class="btn btn-primary">Iniciar sesión</a>
+                        <p class="text-center">Inicia sesión para ver tu perfil.</p>
+                        <div class="text-center">
+                            <a href="{% url 'login' %}" class="btn btn-primary">Iniciar sesión</a>
+                        </div>
                     {% endif %}
                 </div>
             </div>

@@ -14,7 +14,7 @@
                 <div class="card-body">
                     {% for message in messages %}
                         {% if message.tags == 'success' %}
-                            <div class="alert alert-success">
+                            <div class="alert alert-success" role="alert">
                                 {{ message }}
                             </div>
                         {% endif %}
@@ -25,10 +25,25 @@
                             <label for="profile_picture" class="form-label">Upload Profile Picture:</label>
                             <input type="file" name="profile_picture" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">Upload</button>
-                        <a href="{% url 'profileinfo' %}" class="btn btn-link">Profile Information</a>
+                        <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a href="{% url 'profileinfo' %}" class="btn btn-link">Profile Information</a>
+                        </div>
                     </form>
                 </div>
+                {% if messages %}
+                    <div class="card-footer">
+                        <ul class="error-list">
+                            {% for message in messages %}
+                                {% if message.tags == 'error' %}
+                                    <li class="error-text">{{ message }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
