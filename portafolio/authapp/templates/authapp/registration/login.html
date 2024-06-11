@@ -16,21 +16,31 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="username" class="form-label">Nombre de usuario:</label>
-                            <input type="text" id="username" name="username" class="form-control">
+                            <input type="text" id="username" name="username" class="form-control" value="{{ form.username.value|default:'' }}">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" id="password" name="password" class="form-control">
+                            <input type="password" id="password" name="password" class="form-control" value="{{ form.password.value|default:'' }}">
                         </div>
                         <div class="mb-3 text-center">
                             <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
                         </div>
-                        
-
-                        <div class="card-footer text-body-secondary text-center">
-                            <a href="{% url 'signup' %}" class="btn btn-link">¿No tienes cuenta? Regístrate!</a>
+                        {% if form.errors %}
+                        <div class="mb-3 text-center">
+                            <ul class="error-list">
+                                {% for field, errors in form.errors.items %}
+                                    {% for error in errors %}
+                                        <li class="error-text">{{ field|title }}: {{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
                         </div>
+                        {% endif %}
+                        
                     </form>
+                </div>
+                <div class="card-footer text-body-secondary text-center">
+                    <a href="{% url 'signup' %}" class="btn btn-link">¿No tienes cuenta? Regístrate!</a>
                 </div>
             </div>
         </div>
