@@ -6,7 +6,7 @@ from .models import UserProfile
 from django.contrib import messages
 from .forms import SignUpForm, ProfileForm
 
-def signup(request):
+def signUp(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
