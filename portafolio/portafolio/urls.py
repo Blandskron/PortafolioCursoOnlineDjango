@@ -20,14 +20,18 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='home/', permanent=True)),
     path('home/', include('homeapp.urls')),
     path('auth/', include('authapp.urls')),
     path('blog/', include('blogapp.urls')),
+    path('contact/', include('contactapp.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
+handler404 = 'errorapp.views.error_404'
