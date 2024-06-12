@@ -93,3 +93,4 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 ---
 
 ¡Gracias por visitar nuestro proyecto! No dudes en colaborar o hacer preguntas si tienes alguna duda.
+--
