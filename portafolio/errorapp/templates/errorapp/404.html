@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}404{% endblock %}
+
+{% block content %}
+    <div class="error">
+        <div>
+            <div>
+                <h2>Error 404</h2>
+                <p>¡Ups! Parece que te has perdido.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="error-message">
+            <h1>404</h1>
+            <h2>Página No Encontrada</h2>
+            <p>Lo sentimos, pero la página que buscas no existe.</p>
+            <a href="/">Volver al Inicio</a>
+        </div>
+    </div>
+{% endblock %}
