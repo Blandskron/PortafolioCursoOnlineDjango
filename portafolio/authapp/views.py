@@ -30,7 +30,7 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('profile')
+                return redirect('profileinfo')
     else:
         form = AuthenticationForm()
     return render(request, 'authapp/registration/login.html', {'form': form})
