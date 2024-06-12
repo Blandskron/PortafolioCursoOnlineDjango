@@ -122,14 +122,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Define las rutas de archivos estáticos y multimedia
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Define los directorios adicionales para archivos estáticos
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    BASE_DIR / 'homeapp' / 'static',
+]
+
 
 # Configuración para archivos multimedia (imágenes de perfil)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
