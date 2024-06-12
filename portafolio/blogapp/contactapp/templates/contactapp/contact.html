@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div id="form" class="container mt-5">
+    <h1>Contact Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_name" class="form-label">Name</label>
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            <label for="id_email" class="form-label">Email address</label>
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            <label for="id_message" class="form-label">Message</label>
+            {{ form.message }}
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+    #form {
+        width: 40%;
+    }
+
+    @media (max-width: 768px) {
+        #form {
+            width: 90%;
+        }
+    }
+</style>
+{% endblock %}

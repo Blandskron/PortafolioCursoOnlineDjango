@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-1">
+                <h1 style="color: black; font-size: 72px;">Hola curso Python!</h1>
+                <h2 style="color: black; font-size: 48px;">My Nombre es</h2>
+                <h3 style="color: black; font-size: 32px;">Curso 2024</h3>
+            </div>
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'img/logo.png' %}"  alt="Perfil" style="width:60%; border-radius:50%; box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);">
+            </div>
+        </div>
+        <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=000000&random=false&width=435&lines=Full+Stack+Developer+Django" alt="Typing SVG" />
+    </div>
+    <div class="testhome">
+        <h3>Bienvenidos</h3>
+    </div>
+{% endblock %}

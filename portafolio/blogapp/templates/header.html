@@ -1,0 +1,32 @@
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li><a href="{% url 'contact' %}">Contacto</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'expense_create' %}">Crear Gasto</a></li>
+        {% else %}
+
+        {% endif %}
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'expense_list' %}">Lista de Gastos</a></li>
+        {% else %}
+
+        {% endif %}
+    </ul>
+    <ul class="nav justify-content-end">
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}" style="color: white;">
+                    <button type="button" class="btn btn-outline-light">Cerrar Sesión</button>
+                </a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}" style="color: white;">
+                    <button type="button" class="btn btn-outline-light">Iniciar Sesión</button>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
